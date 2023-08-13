@@ -30,11 +30,11 @@ class KeyExchangeContextTest {
         assertEquals(plainText, alice.decrypt(bob.encrypt(plainText)), "Deverá retornar o mesmo valor após realizar encrypt pelo bob e decrypt pela alice");
     }
     
-    //@Test
+    @Test
     void keyAgreementNodeJSPublicKey() throws GeneralSecurityException{
         bob = new KeyExchangeContext();
         // Troca de chaves
-        bob.keyAgreement("041F22957183AF9807A29D5E99B31A3230CF8081AFF3D87CB014EE44C92B5CAD5FF1B9AB7D824920CB41C65E64316FDECE5D594BA33BEBBBB019B449AB56CA6F33");
+        bob.keyAgreement("3059301306072a8648ce3d020106082a8648ce3d0301070342000472f0bcc4080ab7999f2c44a783d8ccbfa44414a889f03f0b8d14a00cc130bf7f7ac8adc44b81cfbd6b92d7735a1263b362d6542c36f20304934763b09376217c");
         
         assertNotNull( bob.encrypt(plainText), "Deverá encryptar o valor realizando keyagreement com NodeJS!");
     }
